@@ -9,5 +9,6 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         text-decoration: none;
         list-style: none;
+        cursor: none;
     }
 `;
