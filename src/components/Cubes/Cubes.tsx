@@ -2,7 +2,7 @@ import React from 'react';
 import * as THREE from "three";
 import { useFrame } from "react-three-fiber";
 
-import { getDistance } from "./utils";
+import { getDistance } from "../../utils";
 
 const temporaryObject = new THREE.Object3D()
 const mousePosition = new THREE.Vector3()

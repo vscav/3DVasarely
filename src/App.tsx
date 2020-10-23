@@ -1,13 +1,11 @@
 import React from 'react';
 
-import Scene from "./Scene"
+import Scene from "./components/Scene";
 
 const App: React.FC = () => {
-  return (
-    <div style={{ height: '100vh' }}>
-      <Scene />
-    </div>
-  );
+    return (
+        <Scene />
+    );
 }
 
 export default App;
