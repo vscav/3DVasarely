@@ -12,8 +12,8 @@ const columns = 50;
 const count: number = rows * columns;
 
 const temporaryColor = new THREE.Color();
-const colors1: string[] = new Array(count / 50).fill('').map((_, i) => (i % 2 === 0 ? '#ffffff' : '#000000'));
-const colors2: string[] = new Array(count / 50).fill('').map((_, i) => (i % 2 === 0 ? '#000000' : '#ffffff'));
+const colors1: string[] = new Array(count / 50).fill('').map((_, i) => (i % 2 === 0 ? '#ddd7c7' : '#000000'));
+const colors2: string[] = new Array(count / 50).fill('').map((_, i) => (i % 2 === 0 ? '#000000' : '#ddd7c7'));
 const colors: string[] = [];
 
 const Cubes: React.FC = () => {
@@ -54,9 +54,14 @@ const Cubes: React.FC = () => {
                 const xPosition = x - columns * 0.5;
                 const yPosition = y - rows * 0.5;
     
-                const mouseDistance = getDistance(vector.x, vector.y, xPosition, yPosition) + 2;
-                const z = -THREE.MathUtils.clamp(mouseDistance, 0, 8);
-                temporaryObject.position.set(xPosition, yPosition, z);
+                // const mouseDistance = getDistance(vector.x, vector.y, xPosition, yPosition) + 2;
+                // const z = -THREE.MathUtils.clamp(mouseDistance, 0, 8);
+                // temporaryObject.position.set(xPosition, yPosition, z);
+
+                // const mouseDistance = getDistance(vector.x, vector.y, xPosition, yPosition) + 2;
+                const mouseDistance = getDistance(vector.x, vector.y, xPosition, yPosition);
+                const z = THREE.MathUtils.clamp(mouseDistance, 0, 8);
+                temporaryObject.position.set(xPosition, yPosition, z - 16);
         
                 temporaryObject.updateMatrix();
                 if(ref.current) ref.current.setMatrixAt(id, temporaryObject.matrix);
